@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% for program in prog %}
+    <h1> Ceci est le program numero {{ program.id }}</h1>
+    <h1> le titre de la serie est {{ program.title }}</h1>
+    <h1> Synopsis </h1>
+    <p>{{  program.summary }}</p>
+    {% endfor %}
+{% endblock %}

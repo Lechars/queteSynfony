@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Category;
+use App\Entity\Program;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
@@ -38,5 +40,24 @@ Class WildController extends AbstractController
             $slug = implode(" ", $slugTab);
             return $this->render('wild/show.html.twig', ['metalSlug' => $slug]);
         }
+    }
+
+    /**
+     * @Route("/cat/{categoryName}", name ="cat")
+     */
+
+    public function showByCategory(string $categoryName): Response
+    {
+         $category = $this->getDoctrine()
+             ->getRepository(Category::class)
+             ->findOneBy(['name'=>$categoryName]);
+         $catTitle=$category->getId();
+
+         $program=$this->getDoctrine()
+             ->getRepository(Program::class)
+             ->findBy(['category'=>$catTitle],['id'=>'desc'],3);
+
+
+         return $this->render('wild/category.html.twig',["prog"=>$program]);
     }
 }
