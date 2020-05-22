@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="a24784aa-c901-40dd-8bf4-ebbbe2ac7ab7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/WildController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/WildController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/wild/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/wild/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20200517201612.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20200519141541.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,6 +157,9 @@
       <workItem from="1589986199167" duration="3793000" />
       <workItem from="1589990537880" duration="3227000" />
       <workItem from="1589994930463" duration="6692000" />
+      <workItem from="1590152480733" duration="849000" />
+      <workItem from="1590154714870" duration="53000" />
+      <workItem from="1590154783488" duration="610000" />
     </task>
     <servers />
   </component>
@@ -162,9 +167,9 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1498" y="257" key="com.intellij.ide.util.TipDialog" timestamp="1589994931417">
+    <state x="1498" y="257" key="com.intellij.ide.util.TipDialog" timestamp="1590154783389">
       <screen x="1024" y="0" width="1600" height="900" />
     </state>
-    <state x="1498" y="257" key="com.intellij.ide.util.TipDialog/1024.0.1600.900/0.27.1024.741@1024.0.1600.900" timestamp="1589994931417" />
+    <state x="1498" y="257" key="com.intellij.ide.util.TipDialog/1024.0.1600.900/0.27.1024.741@1024.0.1600.900" timestamp="1590154783389" />
   </component>
 </project>
