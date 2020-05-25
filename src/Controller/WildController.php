@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use App\Entity\Category;
 use App\Entity\Program;
+use App\Entity\Season;
+use App\Entity\Episode;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,11 +19,25 @@ Class WildController extends AbstractController
     /**
      * @Route("/", name="index")
      */
-    public function index() : Response
+    public function index(): Response
     {
-        return $this->render('wild/index.html.twig', [
-            'website' => 'Wild Séries',
-        ]);
+        $programs = $this->getDoctrine()
+            ->getRepository(Program::class)
+            ->findAll();
+
+        var_dump($programs);
+
+        if (!$programs) {
+            throw $this->createNotFoundException(
+                'No program found in program\'s table.'
+            );
+        }
+
+        return $this->render(
+            'wild/index.html.twig',
+            ['programs' => $programs]
+        );
+
     }
 
     /**
@@ -59,5 +75,49 @@ Class WildController extends AbstractController
 
 
          return $this->render('wild/category.html.twig',["prog"=>$program]);
+    }
+
+    /**
+     * @Route("/wiki/{slug}", name ="wiki", defaults={"slug"="pageVide"})
+     */
+
+    public function showByProgram(string $slug): Response
+    {
+        if ($slug == "pageVide") {
+            return $this->render('wild/progSaeson.html.twig', ['metalSlug' => "Aucune série sélectionnée, veuillez choisir une série"]);
+        } else {
+            $slug = str_replace("-", " ", $slug);
+            $slugTab = explode(" ", $slug);
+            foreach ($slugTab as $key => $limace) {
+                $slugTab[$key] = ucfirst($limace);
+            }
+
+            $slug = implode(" ", $slugTab);
+        }
+
+        $prog=$this->getDoctrine()
+            ->getRepository(Program::class)
+            ->findOneBy(['title'=>$slug]);
+
+        $progId=$prog->getId();
+
+        $seasons=$this->getdoctrine()
+            ->getRepository(Season::class)
+            ->findby(['program'=>$progId]);
+
+            return $this->render('wild/progSaeson.html.twig',['prog'=>$seasons]);
+    }
+
+    /**
+     * @Route("/saison/{id}", name ="bySaison", defaults={"id"="pageVide"})
+     */
+
+    public function showBySeason(int $id): Response
+    {
+        $saison=$this->getdoctrine()
+            ->getRepository(Season::class)
+            ->find($id);
+
+        return $this->render('wild/epiBySaes.html.twig',['saison'=>$saison]);
     }
 }

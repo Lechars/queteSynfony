@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1> {{ prog.0.program.title }} </h1>
+    <ul>
+        {% for season in prog %}
+            <li><a href="\wild\saison\{{ season.number }}">saison {{ season.number }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
