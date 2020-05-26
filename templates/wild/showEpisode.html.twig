@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Episode numero {{ episode.number }} : {{ episode.title }}</h1>
+    <p>{{ episode.synopsis }}</p>
+    <h2>saison: <a href="{{ path('wild_bySaison',{'id':saison.id}) }}">{{ saison.number }}</a></h2>
+    <h2>série:<a href="{{ path('wild_wiki',{'slug':saison.program.title}) }}">{{ saison.program.title }}</a></h2>
+
+{% endblock %}

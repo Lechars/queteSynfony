@@ -120,4 +120,16 @@ Class WildController extends AbstractController
 
         return $this->render('wild/epiBySaes.html.twig',['saison'=>$saison]);
     }
+
+
+
+    /**
+     * @Route("/episode/{id}", name="byEpisode",defaults={"id"="pageVide"})
+     */
+
+    public function showEpisode(Episode $episode): Response
+    {
+        $saison=$episode->getSeason();
+        return $this->render('wild/showEpisode.html.twig',['episode'=>$episode,'saison'=>$saison]);
+    }
 }
