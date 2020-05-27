@@ -26,7 +26,13 @@ Class CategoryController extends AbstractController
             ['method' => Request::METHOD_GET]
         );
         $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()){
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($category);
+            $entityManager->flush();
 
+            return $this->redirectToRoute('add_category');
+        }
         return $this->render(
             'wild/form.html.twig',['form'=>$form->createView()]);
     }
