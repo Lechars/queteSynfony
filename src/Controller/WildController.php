@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Form\CategoryType;
 use App\Entity\Category;
 use App\Entity\Program;
 use App\Entity\Season;
@@ -9,6 +10,7 @@ use App\Entity\Episode;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * @Route("/wild", name="wild_")
@@ -25,17 +27,17 @@ Class WildController extends AbstractController
             ->getRepository(Program::class)
             ->findAll();
 
-        var_dump($programs);
+        $form=$this->createForm(CategoryType::class,null,['method'=>Request::METHOD_GET]);
+
 
         if (!$programs) {
             throw $this->createNotFoundException(
                 'No program found in program\'s table.'
             );
         }
-
         return $this->render(
             'wild/index.html.twig',
-            ['programs' => $programs]
+            ['programs' => $programs, 'form'=>$form->createView()]
         );
 
     }

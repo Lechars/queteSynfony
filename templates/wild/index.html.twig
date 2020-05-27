@@ -4,6 +4,8 @@
 
 
 {% block body %}
-<h1>{{ website }} index</h1>
+    {{ form_start(form) }}
+    {{ form_row(form.field_name) }}
+    <button type="submit" name="btnSearch">Ajouter</button>
+    {{ form_end(form) }}
 {% endblock %}
-
