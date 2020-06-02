@@ -2,8 +2,9 @@
 
 namespace App\Form;
 
+use App\Entity\Category;
+use App\Entity\Actor;
 use App\Entity\Season;
-use App\Entity\category;
 use App\Entity\Program;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -19,7 +20,9 @@ class ProgramType extends AbstractType
             ->add('title')
             ->add('summary')
             ->add('poster')
-            ->add('category',EntityType::class,['class'=>Category::class,'choice_label'=>'number'])
+            ->add('category',EntityType::class,['class'=>Category::class,'choice_label'=>'name'])
+            ->add('actors',EntityType::class,['class'=>Actor::class,'choice_label'=>'name','expanded'=>true,'multiple'=>true])
+
         ;
     }
 
