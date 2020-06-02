@@ -11,15 +11,16 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use App\Entity\User;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class ProgramType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title')
+            ->add('title',TextType::class)
             ->add('summary')
-            ->add('poster')
+            ->add('poster',TextType::class)
             ->add('category',EntityType::class,['class'=>Category::class,'choice_label'=>'name'])
             ->add('actors',EntityType::class,['class'=>Actor::class,'choice_label'=>'name','expanded'=>true,'multiple'=>true])
 
