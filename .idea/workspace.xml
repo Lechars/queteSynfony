@@ -6,7 +6,7 @@
       <change afterPath="$PROJECT_DIR$/src/DataFixtures/CategoryFixtures.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/DataFixtures/EpisodeFixtures.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/DataFixtures/ProgramFixtures.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DataFixtures/SeasonFixture.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DataFixtures/SeasonFixtures.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/wild-serie.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/wild-serie.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -187,7 +187,7 @@
       <workItem from="1590154783488" duration="24357000" />
       <workItem from="1590398917273" duration="35466000" />
       <workItem from="1590921308682" duration="1668000" />
-      <workItem from="1591088843516" duration="28147000" />
+      <workItem from="1591088843516" duration="28971000" />
     </task>
     <servers />
   </component>
@@ -221,10 +221,10 @@
       <screen x="1024" y="0" width="1600" height="900" />
     </state>
     <state x="1164" y="27" width="786" height="726" maximized="true" key="dock-window-4/1024.0.1600.900/0.27.1024.741@0.27.1024.741" timestamp="1591176625634" />
-    <state x="1091" y="27" width="786" height="726" key="dock-window-5" timestamp="1591178896421">
+    <state x="1091" y="27" width="786" height="726" key="dock-window-5" timestamp="1591200433277">
       <screen x="1024" y="0" width="1600" height="900" />
     </state>
-    <state x="1091" y="27" width="786" height="726" key="dock-window-5/1024.0.1600.900/0.27.1024.741@0.27.1024.741" timestamp="1591178896421" />
+    <state x="1091" y="27" width="786" height="726" key="dock-window-5/1024.0.1600.900/0.27.1024.741@0.27.1024.741" timestamp="1591200433277" />
     <state x="1521" y="208" key="run.anything.popup" timestamp="1590335550685">
       <screen x="1024" y="0" width="1600" height="900" />
     </state>
